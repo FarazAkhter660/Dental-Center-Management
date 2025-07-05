@@ -21,17 +21,18 @@ const CalendarView = () => {
   }, []);
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-semibold mb-4">Appointment Calendar</h2>
-      <div className="bg-white shadow rounded-lg p-4">
-        <Calendar
-          localizer={localizer}
-          events={events}
-          startAccessor="start"
-          endAccessor="end"
-          style={{ height: 500 }}
-          className="bg-white"
-        />
+    <div className="py-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Appointment Calendar</h2>
+        <div className="bg-white shadow-lg rounded-lg p-6">
+          <Calendar
+            localizer={localizer}
+            events={events}
+            startAccessor="start"
+            endAccessor="end"
+            style={{ height: 600 }}
+          />
+        </div>
       </div>
     </div>
   );

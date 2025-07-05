@@ -30,78 +30,71 @@ const PatientForm = ({ onSubmit, initialData, onCancel }) => {
   };
 
   return (
-    <div className="bg-white shadow rounded-lg p-4 mb-4">
-      <h3 className="text-lg font-semibold mb-4">
+    <div className="bg-white shadow-lg rounded-lg p-6">
+      <h3 className="text-xl font-semibold text-gray-900 mb-4">
         {initialData ? 'Edit Patient' : 'Add Patient'}
       </h3>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label className="block text-gray-700 mb-2" htmlFor="name">
-            Name *
-          </label>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Name *</label>
           <input
             id="name"
             name="name"
             type="text"
             value={formData.name}
             onChange={handleChange}
-            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition duration-200"
           />
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 mb-2" htmlFor="dob">
-            Date of Birth *
-          </label>
+        <div>
+          <label htmlFor="dob" className="block text-sm font-medium text-gray-700 mb-2">Date of Birth *</label>
           <input
             id="dob"
             name="dob"
             type="date"
             value={formData.dob}
             onChange={handleChange}
-            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition duration-200"
           />
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 mb-2" htmlFor="contact">
-            Contact *
-          </label>
+        <div>
+          <label htmlFor="contact" className="block text-sm font-medium text-gray-700 mb-2">Contact *</label>
           <input
             id="contact"
             name="contact"
             type="text"
             value={formData.contact}
             onChange={handleChange}
-            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition duration-200"
           />
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 mb-2" htmlFor="healthInfo">
-            Health Info
-          </label>
+        <div>
+          <label htmlFor="healthInfo" className="block text-sm font-medium text-gray-700 mb-2">Health Info</label>
           <textarea
             id="healthInfo"
             name="healthInfo"
             value={formData.healthInfo}
             onChange={handleChange}
-            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            rows="4"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition duration-200"
           />
         </div>
-        <div className="flex justify-end">
+        <div className="flex justify-end space-x-2">
           {initialData && (
             <button
               type="button"
               onClick={onCancel}
-              className="bg-gray-500 text-white px-4 py-2 rounded mr-2 hover:bg-gray-600"
+              className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400 transition duration-200"
             >
               Cancel
             </button>
           )}
           <button
             type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+            className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
           >
             {initialData ? 'Update' : 'Add'} Patient
           </button>

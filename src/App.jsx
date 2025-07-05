@@ -8,6 +8,8 @@ import PatientDashboard from './pages/PatientDashboard';
 import PatientManagement from '../src/pages/PatientManagement';
 import AppointmentManagement from './pages/AppointmentManagement';
 import { initializeData } from './utils/localStorage';
+import './index.css';
+import CalendarView from './pages/CalendarView';
 
 function App() {
   useEffect(() => {
@@ -30,6 +32,7 @@ function App() {
             <Route index element={<Navigate to="patients" />} />
             <Route path="patients" element={<PatientManagement />} />
             <Route path="appointments" element={<AppointmentManagement />} />
+            <Route path="calendar" element={<CalendarView />} />
           </Route>
           <Route
             path="/patient"
